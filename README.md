@@ -23,7 +23,7 @@ Lopes, M., Lang, T., Toussaint, M., & Oudeyer, P. Y. (2012). Exploration in mode
 
 To clone this repository, use `git clone https://github.com/AugustinChrtn/Reproduction/`
 
-Then, install the required libraries indicated in the `requirements.txt` file.
+Then, install the required libraries indicated in the `requirements.txt` or `requirements.yml` file.
 
 After these two steps, you can:
 * Launch `generation_env.py` to generate the environments.
