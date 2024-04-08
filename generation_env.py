@@ -127,7 +127,7 @@ def proportion_of_valid_worlds(iterations=5000, alpha_max=1, alpha_min=0.1, malu
         valid_count += validity
     percentage_valid = round(100*valid_count/iterations, 1)
     print('')
-    print('Percentage of valid worlds out of ' + str(iterations) +
+    print('Percentage of valid environments out of ' + str(iterations) +
           ' worlds, with a malus of ' + str(malus)+': '
           + str(percentage_valid)+'%')
 
@@ -168,37 +168,41 @@ def generate_strong_non_stationarity_(world_number=1, nb_env=1, malus=-0.1):
             np.save('Environments/Transitions_strong_non_stat_'+str(malus)+'_'+str(index_world) +
                     '_' + str(non_stat_number) + '.npy', transitions_strong_non_stationarity)
 
-
+if __name__=="__main__":
 # Generate the (deterministic) reward matrices
-save_rewards(1, -0.1)
-save_rewards(1, -1)
+    print("This program generates all the environments.")   
+    save_rewards(1, -0.1)
+    save_rewards(1, -1)
 
-# Generate an environment similar to the one of Lopes and colleagues
-np.random.seed(1)
-generate_valid_env(nb_env=1, alpha_max=1, alpha_min=0.1, malus=-0.1, bonus=1)
+    # Generate an environment similar to the one of Lopes and colleagues
+    np.random.seed(1)
+    generate_valid_env(nb_env=1, alpha_max=1, alpha_min=0.1, malus=-0.1, bonus=1)
 
-# Generate 20 environments with one change in the optimal path
-np.random.seed(2)
-generate_non_stationarity_article(world_number=1, nb_env=20, malus=-0.1)
+    # Generate 20 environments with one change in the optimal path
+    np.random.seed(2)
+    generate_non_stationarity_article(world_number=1, nb_env=20, malus=-0.1)
 
-# Generate 20 environments with changes for all the states in the optimal path
-np.random.seed(3)
-generate_strong_non_stationarity_(world_number=1, nb_env=20, malus=-0.1)
+    # Generate 20 environments with changes for all the states in the optimal path
+    np.random.seed(3)
+    generate_strong_non_stationarity_(world_number=1, nb_env=20, malus=-0.1)
 
-# Generate 10 stationary environments with Bureau & Sebag (2013) parameters
-np.random.seed(4)
-generate_valid_env(nb_env=10, alpha_max=1, alpha_min=0.1, malus=-1, bonus=1)
+    # Generate 10 stationary environments with Bureau & Sebag (2013) parameters
+    np.random.seed(4)
+    generate_valid_env(nb_env=10, alpha_max=1, alpha_min=0.1, malus=-1, bonus=1)
 
-# Generate 10 envs for each stationary env, with one change in the optimal path
-np.random.seed(5)
-generate_non_stationarity_article(world_number=10, nb_env=10, malus=-1)
+    # Generate 10 envs for each stationary env, with one change in the optimal path
+    np.random.seed(5)
+    generate_non_stationarity_article(world_number=10, nb_env=10, malus=-1)
 
-# Generate 10 envs for each stationary env, with changes for all the states in the optimal path
-np.random.seed(6)
-generate_strong_non_stationarity_(world_number=10, nb_env=10, malus=-1)
+    # Generate 10 envs for each stationary env, with changes for all the states in the optimal path
+    np.random.seed(6)
+    generate_strong_non_stationarity_(world_number=10, nb_env=10, malus=-1)
 
-
-# Check the percentage of valid environments for each condition
-np.random.seed(10)
-proportion_of_valid_worlds(iterations=5000, alpha_max=1, alpha_min=0.1, malus=-0.1, bonus=1)
-proportion_of_valid_worlds(iterations=5000, alpha_max=1, alpha_min=0.1, malus=-1, bonus=1)
+    print("Success: All the environments have been generated.")
+    print("")
+    print("Computing stats depending on the value of the punishment." )
+    # Check the percentage of valid environments for each condition
+    np.random.seed(10)
+    proportion_of_valid_worlds(iterations=5000, alpha_max=1, alpha_min=0.1, malus=-0.1, bonus=1)
+    proportion_of_valid_worlds(iterations=5000, alpha_max=1, alpha_min=0.1, malus=-1, bonus=1)
+    print("Success: End of computation." )

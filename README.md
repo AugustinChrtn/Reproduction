@@ -12,7 +12,7 @@ Lopes, M., Lang, T., Toussaint, M., & Oudeyer, P. Y. (2012). Exploration in mode
 * The generation process of the environments, as well as their generation is in `generation_env.py`
 * To launch the experiment and get all the result figures, launch `main.py`
 * To get all the parameter fitting figures, launch `parameter_fitting.py`
-* To install the libraries, use `requirements.txt`
+* To install the libraries, use `requirements.txt` or `requirements.yml`
 * The folder **Environments** contains the transitions and the rewards of the environments generated
 * The folder **Images** contains 2D heatmaps on the different environments
 * The folder **Parameter fitting** contains the plots and the data generated with `parameter_fitting.py`
