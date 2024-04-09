@@ -248,7 +248,8 @@ def extracting_results(rewards, opt_pol_error, real_pol_error, names_environment
     return optimal_policy_statistics, real_policy_statistics, rewards_statistics
 
 
-def evaluate_agents(environments, agents, nb_iters, play_params, agent_parameters, starting_seed):
+def evaluate_agents(environments, agents, nb_iters, play_params, 
+                    agent_parameters, starting_seed,title_fig=''):
     """Launch the experiment, extract the results and plot them."""
     every_simulation = getting_simulations_to_do(
         environments, agents, range(nb_iters))
@@ -258,13 +259,15 @@ def evaluate_agents(environments, agents, nb_iters, play_params, agent_parameter
     optimal, real, rewards = extracting_results(
         rewards, pol_errors_opti, pol_errors_real, environments, agents, nb_iters)
     save_and_plot(optimal, real, rewards, agents, environments,
-                  play_params, environments, agent_parameters)
+                  play_params, environments, agent_parameters,
+                  title=title_fig)
 
 
 # Basic visualisation #
 
 def save_and_plot(optimal_stats, real_stats, rewards_stats, agents_tested,
-                  names_environments, play_parameters, environment_parameters, agent_parameters):
+                  names_environments, play_parameters, environment_parameters, 
+                  agent_parameters, title=''):
     """Save and plot the graphical reprentations of the results."""
     pol_opti, SEM_pol_opti = optimal_stats
     pol_real, SEM_pol_real = real_stats
@@ -292,16 +295,20 @@ def save_and_plot(optimal_stats, real_stats, rewards_stats, agents_tested,
                 x_axis, colors, markers, marker_sizes)
     plt.title(
         "Policy errors with the optimal policy on the model each agent learned")
-    plt.savefig('Plots/OptimalPolicy/pol_error_opti_'+
-                names_environments[0]+time_end +'.pdf', bbox_inches='tight')
+    if title == '':
+        end_path = names_environments[0]+time_end +'.pdf'
+    else :
+        end_path = title+'.pdf'
+    plt.savefig('Plots/OptimalPolicy/pol_error_opti_'+ end_path,
+                 bbox_inches='tight')
     plt.close()
 
     plot1D([-13, 0.5], "Steps", "Policy value error")
     plot_agents(agents_tested, pol_real, SEM_pol_real,
                 x_axis, colors, markers, marker_sizes)
     plt.title("Policy error with the different agent policies")
-    plt.savefig('Plots/AgentPolicy/pol_error_real_'+
-                names_environments[0]+time_end +'.pdf', bbox_inches='tight')
+    plt.savefig('Plots/AgentPolicy/pol_error_real_'+ end_path,
+                 bbox_inches='tight')
     plt.close()
 
     x_reward = [i for i in range(play_parameters["trials"])]
@@ -309,11 +316,9 @@ def save_and_plot(optimal_stats, real_stats, rewards_stats, agents_tested,
     plot_agents(agents_tested, reward, SEM_reward,
                 x_reward, colors, markers, marker_sizes)
     plt.title("Rewards for each agent")
-    plt.savefig('Plots/Rewards/Rewards_'+
-                names_environments[0]+time_end +'.pdf', bbox_inches='tight')
+    plt.savefig('Plots/Rewards/Rewards_'+ end_path, bbox_inches='tight')
     plt.close()
-
-    print('Saved the new plots in the Plots folder')
+    print(title + ' saved in the Plots folder')
 
 
 def plot1D(ylim, xlabel, ylabel):
