@@ -1,1 +1,1 @@
-This directory contains the 2D parameter fitting. For every policy value error (optimal or real agent policy), we compute the mean value error.
+This directory contains the 2D parameter fitting. For every policy value error (optimal or real agent policy), we compute the mean value error. The plots of the article are available in the Article directory. The plots that you generate will be stored in the folder associated with each agent.

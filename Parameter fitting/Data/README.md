@@ -1,1 +1,1 @@
-This directory contains the raw data of our experiments.
+This directory contains the raw data of the experiments.

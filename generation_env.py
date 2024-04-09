@@ -200,8 +200,8 @@ if __name__=="__main__":
 
     print("Success: All the environments have been generated.")
     print("")
-    print("Computing stats depending on the value of the punishment." )
     # Check the percentage of valid environments for each condition
+    print("Computing stats depending on the value of the punishment." )
     np.random.seed(10)
     proportion_of_valid_worlds(iterations=5000, alpha_max=1, alpha_min=0.1, malus=-0.1, bonus=1)
     proportion_of_valid_worlds(iterations=5000, alpha_max=1, alpha_min=0.1, malus=-1, bonus=1)
