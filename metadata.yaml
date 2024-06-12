@@ -49,13 +49,13 @@ keywords: Intrinsic motivation, Model-based reinforcement learning, Python
 # You can get a DOI for your code from Zenodo,
 #   see https://guides.github.com/activities/citable-code/
 code:
-  - url:
-  - doi: 
+  - url: https://github.com/AugustinChrtn/Reproduction/
+  - doi: 10.5281/zenodo.11612146 
 
 # Date URL and DOI (optional if no data)
-data:
-  - url:
-  - doi:
+data: None
+  - url: None
+  - doi: None
 
 # Information about the original article that has been replicated
 replication:
@@ -75,19 +75,7 @@ replication:
  - doi:  None # Regular digital object identifier
 
 # Don't forget to surround abstract with double quotes
-abstract: "The goal of a model‐based reinforcement learning agent is to maximize external returns by understanding
-the structure of the environment it explores. However, simple reinforcement learning agents may struggle
-with tasks where external rewards are scarce. Taking inspiration from developmental sciences which show
-that infants spontaneously explore their environment in the absence of extrinsic rewards, intrinsically mo‐
-tivated reinforcement learning investigates how agents can explore their environments with little extrinsic
-motivation. In 2012, Lopes and colleagues proposed two new intrinsically motivated models in model‐based
-reinforcement learning. Building upon two optimistic‐in‐the‐face‐of‐uncertainty agents, they demonstrate
-theoretical convergence properties for one of their agents, and provide three experiments to show that their
-models are more versatile than state‐of‐the‐art models. However, due to missing information in their proto‐
-col, we only managed to partially reproduce the results of the original article. In our reproduction article, we
-show the results obtained for several alternative ways to interpret the text of the original article, and discuss
-what this implies in terms of performance of the different agents. For each tested variant, we performed
-parameter optimization in order to give the best chances to replicate the figures of the original article"
+abstract: "The goal of a model-based reinforcement learning agent is to maximize external returns by understanding the structure of the environment it explores. However, simple reinforcement learning agents may struggle with tasks where external rewards are scarce. Taking inspiration from developmental sciences which show that infants spontaneously explore their environment in the absence of extrinsic rewards, intrinsically motivated reinforcement learning investigates how agents can explore their environments with little extrinsic motivation. In 2012, Lopes and colleagues proposed two new intrinsically motivated models in model-based reinforcement learning [1]. Building upon two optimistic-in-the-face-of-uncertainty agents, they demonstrate theoretical convergence properties for one of their agents, and provide three experiments to show that their models are more versatile than state-of-the-art models. However, due to missing information in their protocol, we only managed to partially reproduce the results of the original article. In our reproduction article, we show the results obtained for several alternative ways to interpret the text of the original article, and discuss what this implies in terms of performance of the different agents. For each tested variant, we performed parameter optimization in order to give the best chances to replicate the figures of the original article."
 
 # Bibliography file (yours)
 bibliography: bibliography.bib
@@ -101,7 +89,7 @@ type: Replication
 
 # Scientific domain of the article (e.g. Computational Neuroscience)
 #  (one domain only & try to be not overly specific)
-domain: Computational Neuroscience
+domain: Computer Science
 
 # Coding language (main one only if several)
 language: Python
@@ -112,17 +100,17 @@ language: Python
 
 # For example, the URL of the GitHub issue where review actually occured
 review: 
-  - url: 
+  - url: https://github.com/ReScience/submissions/issues/73
 
 contributors:
-  - name:
-    orcid: 
+  - name: Olivia Guest
+    orcid: 0000-0002-1891-0972
     role: editor
-  - name:
-    orcid:
+  - name: Mohammad Arvan
+    orcid: 0000-0001-9155-4559
     role: reviewer
-  - name:
-    orcid:
+  - name: Nicolas Rougier
+    orcid: 0000-0002-6972-589X
     role: reviewer
 
 # This information will be provided by the editor
